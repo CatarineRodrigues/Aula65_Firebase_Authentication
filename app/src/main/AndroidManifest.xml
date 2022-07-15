@@ -14,7 +14,13 @@
         android:theme="@style/Theme.ExercicioFirebaseAuthentication"
         tools:targetApi="31">
         <activity
-            android:name=".ui.home.view.MainActivity"
+            android:name=".RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.home.view.HomeActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
