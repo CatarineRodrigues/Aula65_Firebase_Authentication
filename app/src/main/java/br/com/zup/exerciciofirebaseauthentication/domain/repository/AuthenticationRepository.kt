@@ -23,7 +23,7 @@ class AuthenticationRepository {
 
     fun getEmailUser(): String = auth.currentUser?.email.toString()
 
-    fun logoutOut() {
+    fun logoutUser() {
         auth.signOut()
     }
 

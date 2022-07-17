@@ -10,7 +10,7 @@
         android:id="@+id/tv_wellcome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Login Realizado com Sucesso!"
+        android:text="@string/login_success"
         android:gravity="center"
         android:layout_marginStart="36dp"
         android:layout_marginEnd="36dp"

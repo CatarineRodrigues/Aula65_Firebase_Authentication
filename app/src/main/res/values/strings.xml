@@ -7,4 +7,6 @@
     <string name="hogin">Login</string>
     <string name="password">Senha</string>
     <string name="email">Email</string>
+    <string name="login_success">Login Realizado com Sucesso!</string>
+    <string name="exit">Sair</string>
 </resources>
