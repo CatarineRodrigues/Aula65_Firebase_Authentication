@@ -23,8 +23,8 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setClickButtonLogin()
-        goToRegistration()
-        initObservers()
+//        goToRegistration()
+//        initObservers()
     }
 
     private fun goToHomePage(user: User) {

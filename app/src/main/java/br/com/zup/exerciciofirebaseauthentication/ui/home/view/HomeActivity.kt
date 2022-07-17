@@ -37,7 +37,7 @@ class HomeActivity : AppCompatActivity() {
             R.id.item1_exit -> {
                 viewModel.logoutUser()
                 this.finish()
-                goToLogin()
+//                goToLogin()
                 true
             }
             else -> super.onOptionsItemSelected(item)
@@ -45,8 +45,11 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun showDataUser() {
-        binding.tvNameUser.text = viewModel.getNameUser()
-        binding.tvEmailUser.text = viewModel.getEmailUser()
+        val name = viewModel.getNameUser()
+        val email = viewModel.getEmailUser()
+//        binding.tvNameUser.text = name
+//        binding.tvEmailUser.text = email
+        binding.tvNameUser.text = "$name - $email"
     }
 
     private fun goToLogin(){

@@ -34,7 +34,7 @@ class RegisterActivity : AppCompatActivity() {
 
     private fun initObserver() {
         viewModel.registerResponse.observe(this) {
-            goToHomePage(it)
+//            goToHomePage(it)
         }
         viewModel.errorResponse.observe(this) {
             Snackbar.make(binding.root, it, Snackbar.LENGTH_LONG).show()
