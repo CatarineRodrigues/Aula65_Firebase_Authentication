@@ -1,5 +1,6 @@
 package br.com.zup.exerciciofirebaseauthentication.ui.home.view
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
@@ -10,6 +11,7 @@ import br.com.zup.exerciciofirebaseauthentication.R
 import br.com.zup.exerciciofirebaseauthentication.databinding.ActivityHomeBinding
 import br.com.zup.exerciciofirebaseauthentication.domain.model.User
 import br.com.zup.exerciciofirebaseauthentication.ui.home.viewmodel.HomeViewModel
+import br.com.zup.exerciciofirebaseauthentication.ui.login.view.LoginActivity
 
 class HomeActivity : AppCompatActivity() {
     private lateinit var binding: ActivityHomeBinding
@@ -21,6 +23,7 @@ class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityHomeBinding.inflate(layoutInflater)
+        showDataUser()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -34,17 +37,19 @@ class HomeActivity : AppCompatActivity() {
             R.id.item1_exit -> {
                 viewModel.logoutUser()
                 this.finish()
-//                goToLogin()
+                goToLogin()
                 true
             }
             else -> super.onOptionsItemSelected(item)
         }
     }
 
-    private fun getRegisterUser(){
-        val user = intent?.getParcelableExtra<User>("user key")
-        user?.let {
+    private fun showDataUser() {
+        binding.tvNameUser.text = viewModel.getNameUser()
+        binding.tvEmailUser.text = viewModel.getEmailUser()
+    }
 
-        }
+    private fun goToLogin(){
+        startActivity(Intent(this, LoginActivity::class.java))
     }
 }
