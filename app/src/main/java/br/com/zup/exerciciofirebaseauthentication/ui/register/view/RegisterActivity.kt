@@ -21,6 +21,7 @@ class RegisterActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityRegisterBinding.inflate(layoutInflater)
         getDataUser()
+        setClickButtonFinishRegistration()
         initObserver()
     }
 
@@ -38,6 +39,13 @@ class RegisterActivity : AppCompatActivity() {
         }
         viewModel.errorResponse.observe(this) {
             Snackbar.make(binding.root, it, Snackbar.LENGTH_LONG).show()
+        }
+    }
+
+    private fun setClickButtonFinishRegistration(){
+        binding.btnRegistration.setOnClickListener {
+            val user = getDataUser()
+            viewModel.validateDataUser(user)
         }
     }
 
