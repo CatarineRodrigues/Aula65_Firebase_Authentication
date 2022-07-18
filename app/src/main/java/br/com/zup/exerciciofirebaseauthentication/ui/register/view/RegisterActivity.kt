@@ -3,6 +3,7 @@ package br.com.zup.exerciciofirebaseauthentication.ui.register.view
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuItem
 import androidx.lifecycle.ViewModelProvider
 import br.com.zup.exerciciofirebaseauthentication.databinding.ActivityRegisterBinding
 import br.com.zup.exerciciofirebaseauthentication.domain.model.User
@@ -20,6 +21,8 @@ class RegisterActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityRegisterBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
         setClickButtonFinishRegistration()
         initObserver()
     }
@@ -34,7 +37,7 @@ class RegisterActivity : AppCompatActivity() {
 
     private fun initObserver() {
         viewModel.registerResponse.observe(this) {
-//            goToHomePage(it)
+            goToHomePage(it)
         }
         viewModel.errorResponse.observe(this) {
             Snackbar.make(binding.root, it, Snackbar.LENGTH_LONG).show()
@@ -54,4 +57,13 @@ class RegisterActivity : AppCompatActivity() {
         }
         startActivity(intent)
     }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == android.R.id.home) {
+            this.onBackPressed()
+            return true
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
 }

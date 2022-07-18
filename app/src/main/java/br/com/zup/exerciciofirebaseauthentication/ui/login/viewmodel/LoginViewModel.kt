@@ -15,10 +15,6 @@ class LoginViewModel : ViewModel() {
     private var _errorResponse = MutableLiveData<String>()
     val errorResponse: LiveData<String> = _errorResponse
 
-    fun singinUser(email: String, pass: String) {
-        repository.loginUser(email = email, pass = pass)
-    }
-
     fun validateDataUser(user: User) {
         when {
             user.email.isEmpty() -> {
@@ -35,7 +31,7 @@ class LoginViewModel : ViewModel() {
 
     private fun loginUser(user: User) {
         try {
-            repository.registerUser(
+            repository.loginUser(
                 user.email,
                 user.password
             ).addOnSuccessListener {

@@ -22,9 +22,11 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
         setClickButtonLogin()
-//        goToRegistration()
-//        initObservers()
+        setClickButtonNewRegister()
+        initObservers()
     }
 
     private fun goToHomePage(user: User) {
@@ -48,8 +50,14 @@ class LoginActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
+    private fun setClickButtonNewRegister(){
+        binding.tvNewRegister.setOnClickListener {
+            goToRegistration()
+        }
+    }
+
     private fun setClickButtonLogin(){
-        binding.btnLogin.setOnClickListener {
+        binding.btnLogin?.setOnClickListener {
             val user =  getDataUser()
             viewModel.validateDataUser(user)
         }

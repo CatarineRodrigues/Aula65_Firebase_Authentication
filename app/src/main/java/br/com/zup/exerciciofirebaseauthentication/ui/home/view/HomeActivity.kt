@@ -9,7 +9,6 @@ import android.view.MenuItem
 import androidx.lifecycle.ViewModelProvider
 import br.com.zup.exerciciofirebaseauthentication.R
 import br.com.zup.exerciciofirebaseauthentication.databinding.ActivityHomeBinding
-import br.com.zup.exerciciofirebaseauthentication.domain.model.User
 import br.com.zup.exerciciofirebaseauthentication.ui.home.viewmodel.HomeViewModel
 import br.com.zup.exerciciofirebaseauthentication.ui.login.view.LoginActivity
 
@@ -23,6 +22,7 @@ class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityHomeBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         showDataUser()
     }
 
@@ -37,7 +37,7 @@ class HomeActivity : AppCompatActivity() {
             R.id.item1_exit -> {
                 viewModel.logoutUser()
                 this.finish()
-//                goToLogin()
+                goToLogin()
                 true
             }
             else -> super.onOptionsItemSelected(item)
@@ -47,9 +47,9 @@ class HomeActivity : AppCompatActivity() {
     private fun showDataUser() {
         val name = viewModel.getNameUser()
         val email = viewModel.getEmailUser()
-//        binding.tvNameUser.text = name
-//        binding.tvEmailUser.text = email
-        binding.tvNameUser.text = "$name - $email"
+        binding.tvNameUser.text = name
+        binding.tvEmailUser.text = email
+//        binding.tvNameUser.text = "$name - $email"
     }
 
     private fun goToLogin(){
