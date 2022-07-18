@@ -10,10 +10,10 @@
         android:id="@+id/tv_welcome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/login_success"
-        android:gravity="center"
         android:layout_marginStart="36dp"
         android:layout_marginEnd="36dp"
+        android:gravity="center"
+        android:text="@string/login_success"
         app:layout_constraintBottom_toTopOf="@id/tv_nameUser"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -28,7 +28,8 @@
         app:layout_constraintBottom_toTopOf="@id/tv_emailUser"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_welcome" />
+        app:layout_constraintTop_toBottomOf="@id/tv_welcome"
+        tools:text="@string/user_name" />
 
     <TextView
         android:id="@+id/tv_emailUser"
@@ -39,7 +40,8 @@
         app:layout_constraintBottom_toTopOf="@id/image"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_nameUser" />
+        app:layout_constraintTop_toBottomOf="@id/tv_nameUser"
+        tools:text="@string/user_email" />
 
     <ImageView
         android:id="@+id/image"
@@ -50,5 +52,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/black"
+        android:textColor="@color/white"
+        android:text="Mensagens"
+        android:textAllCaps="true"
+        app:layout_constraintTop_toBottomOf="@id/image"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
