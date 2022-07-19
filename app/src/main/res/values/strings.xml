@@ -12,4 +12,8 @@
     <string name="create_account">Criar nova conta</string>
     <string name="user_name">Nome:</string>
     <string name="user_email">Email:</string>
+    <string name="title_notification">Título da notificação</string>
+    <string name="text_notification">Texto da notificação</string>
+    <string name="token">Token</string>
+    <string name="msg_token_fmt">MENSAGEM TOKEN</string>
 </resources>

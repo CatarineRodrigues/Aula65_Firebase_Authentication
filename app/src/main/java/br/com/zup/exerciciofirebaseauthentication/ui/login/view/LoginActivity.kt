@@ -1,16 +1,25 @@
 package br.com.zup.exerciciofirebaseauthentication.ui.login.view
 
+import android.content.BroadcastReceiver
+import android.content.Context
 import android.content.Intent
+import android.content.IntentFilter
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.ViewModelProvider
+import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import br.com.zup.exerciciofirebaseauthentication.R
+import br.com.zup.exerciciofirebaseauthentication.data.datasource.remote.MyFirebaseMessagingService
 import br.com.zup.exerciciofirebaseauthentication.databinding.ActivityLoginBinding
 import br.com.zup.exerciciofirebaseauthentication.domain.model.User
 import br.com.zup.exerciciofirebaseauthentication.ui.home.view.HomeActivity
 import br.com.zup.exerciciofirebaseauthentication.ui.login.viewmodel.LoginViewModel
 import br.com.zup.exerciciofirebaseauthentication.ui.register.view.RegisterActivity
+import com.google.android.gms.tasks.OnCompleteListener
 import com.google.android.material.snackbar.Snackbar
+import com.google.firebase.messaging.FirebaseMessaging
+import com.google.firebase.messaging.RemoteMessage
+import com.google.firebase.messaging.ktx.remoteMessage
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
@@ -27,6 +36,8 @@ class LoginActivity : AppCompatActivity() {
         setClickButtonLogin()
         setClickButtonNewRegister()
         initObservers()
+        showToken()
+        LocalBroadcastManager.getInstance( this ).registerReceiver(messageReceiver, IntentFilter( "MyData" ))
     }
 
     private fun goToHomePage(user: User) {
@@ -69,4 +80,27 @@ class LoginActivity : AppCompatActivity() {
             password = binding.etPassword.text.toString()
         )
     }
+
+    private fun showToken() {
+        FirebaseMessaging.getInstance().token.addOnCompleteListener(
+            OnCompleteListener { task ->
+                if (!task.isSuccessful) {
+                    return@OnCompleteListener
+                }
+                val token = task.result
+                binding.tvToken.text = token
+//                binding.tvTitleNotification.text = FirebaseMessaging.getInstance().isAutoInitEnabled.toString()
+
+//                binding.tvTitleNotification.text = FirebaseMessaging.getTransportFactory().toString()
+
+            }
+        )
+    }
+
+    private  val messageReceiver: BroadcastReceiver = object : BroadcastReceiver() {
+        override  fun  onReceive (context: Context?, intent: Intent ) {
+            binding.tvTitleNotification.text = intent.extras?.getString( "message" )
+        }
+    }
+
 }
