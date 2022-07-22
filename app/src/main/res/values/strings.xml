@@ -12,4 +12,8 @@
     <string name="create_account">Criar nova conta</string>
     <string name="user_name">Nome:</string>
     <string name="user_email">Email:</string>
+    <string name="mensage">Mensagem digitada</string>
+    <string name="add_message">Adicionar Mensagem</string>
+    <string name="new_message">Digite a nova mensagem</string>
+    <string name="insert_your_message">Insira aqui as suas mensagens pessoais</string>
 </resources>

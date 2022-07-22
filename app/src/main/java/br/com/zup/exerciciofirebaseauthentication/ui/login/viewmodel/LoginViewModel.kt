@@ -17,15 +17,9 @@ class LoginViewModel : ViewModel() {
 
     fun validateDataUser(user: User) {
         when {
-            user.email.isEmpty() -> {
-                _errorResponse.value = "Insira seu email"
-            }
-            user.password.isEmpty() -> {
-                _errorResponse.value = "Insira sua senha"
-            }
-            else -> {
-                loginUser(user)
-            }
+            user.email.isEmpty() -> _errorResponse.value = "Insira seu email"
+            user.password.isEmpty() -> _errorResponse.value = "Insira sua senha"
+            else -> loginUser(user)
         }
     }
 
