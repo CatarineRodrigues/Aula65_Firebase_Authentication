@@ -9,6 +9,8 @@ import android.view.MenuItem
 import androidx.lifecycle.ViewModelProvider
 import br.com.zup.exerciciofirebaseauthentication.R
 import br.com.zup.exerciciofirebaseauthentication.databinding.ActivityHomeBinding
+import br.com.zup.exerciciofirebaseauthentication.ui.createmessage.view.CreateMessageActivity
+import br.com.zup.exerciciofirebaseauthentication.ui.createmessage.view.CreateMessageAdapter
 import br.com.zup.exerciciofirebaseauthentication.ui.home.viewmodel.HomeViewModel
 import br.com.zup.exerciciofirebaseauthentication.ui.login.view.LoginActivity
 
@@ -24,6 +26,7 @@ class HomeActivity : AppCompatActivity() {
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
         showDataUser()
+        goToMessage()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -54,5 +57,11 @@ class HomeActivity : AppCompatActivity() {
 
     private fun goToLogin(){
         startActivity(Intent(this, LoginActivity::class.java))
+    }
+
+    private fun goToMessage(){
+        binding.btnMessage.setOnClickListener {
+            startActivity(Intent(this, CreateMessageActivity::class.java))
+        }
     }
 }
