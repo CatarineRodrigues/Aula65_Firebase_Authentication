@@ -7,7 +7,8 @@ import br.com.zup.exerciciofirebaseauthentication.databinding.MessageItemBinding
 import com.squareup.picasso.Picasso
 
 class CreateMessageAdapter (
-    private var messageList: MutableList<String>
+    private var messageList: MutableList<String>,
+    private var onStarClick: (message: String) -> Unit
 ) :
     RecyclerView.Adapter<CreateMessageAdapter.ViewHolder>() {
 
@@ -19,9 +20,9 @@ class CreateMessageAdapter (
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val message = messageList[position]
         holder.showMessage(message)
-//        holder.binding.ivRemoveFavorite.setOnClickListener {
-//            onCLick(message)
-//        }
+        holder.binding.icFavorite.setOnClickListener {
+            onStarClick(message)
+        }
     }
 
     override fun getItemCount() = messageList.size

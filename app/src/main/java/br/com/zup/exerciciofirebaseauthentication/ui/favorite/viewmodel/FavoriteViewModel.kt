@@ -9,7 +9,7 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
 
-class FavoriteViewModel: ViewModel() {
+class FavoriteViewModel : ViewModel() {
     private val favoriteRepository = FavoriteRepository()
 
     private var _favoriteListState = MutableLiveData<List<String>>()
@@ -38,7 +38,7 @@ class FavoriteViewModel: ViewModel() {
             })
     }
 
-    fun removeMessageFavorite(message: String){
+    fun removeMessageFavorite(message: String) {
         val uri: Uri = Uri.parse(message)
         val pathImage: String? = uri.lastPathSegment?.replace(".jpg", "")
         favoriteRepository.getDatabaseReference().child("$pathImage").removeValue()

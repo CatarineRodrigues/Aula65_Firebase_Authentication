@@ -1,32 +1,22 @@
 package br.com.zup.exerciciofirebaseauthentication.ui.createmessage.view
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Message
-import android.view.Menu
-import android.view.MenuInflater
 import android.view.MenuItem
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.fragment.NavHostFragment
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
-import br.com.zup.exerciciofirebaseauthentication.R
 import br.com.zup.exerciciofirebaseauthentication.databinding.ActivityCreateMessageBinding
-import br.com.zup.exerciciofirebaseauthentication.databinding.ActivityHomeBinding
 import br.com.zup.exerciciofirebaseauthentication.ui.createmessage.viewmodel.CreateMessageViewModel
 import br.com.zup.exerciciofirebaseauthentication.ui.favorite.view.FavoriteActivity
-import br.com.zup.exerciciofirebaseauthentication.ui.favorite.view.FavoriteAdapter
-import br.com.zup.exerciciofirebaseauthentication.ui.home.viewmodel.HomeViewModel
-import br.com.zup.exerciciofirebaseauthentication.ui.login.view.LoginActivity
 
 class CreateMessageActivity : AppCompatActivity() {
     private lateinit var binding: ActivityCreateMessageBinding
     private var messageList = mutableListOf<String>()
 
     private val adapter: CreateMessageAdapter by lazy {
-        CreateMessageAdapter(arrayListOf())
+        CreateMessageAdapter(arrayListOf(), ::favoriteMessage)
     }
 
     private val viewModel: CreateMessageViewModel by lazy {
@@ -38,41 +28,11 @@ class CreateMessageActivity : AppCompatActivity() {
         binding = ActivityCreateMessageBinding.inflate(layoutInflater)
         setContentView(binding.root)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
         addNewMessage()
         setRecyclerView()
         goToFavoriteList()
-
-
     }
-
-//    private fun intObserver() {
-//        viewModel.characterResponse.observe(this.viewLifecycleOwner) {
-//
-//            when (it) {
-//                is ViewState.Success -> {
-//                    adapter.updateCharacterList(it.data.toMutableList())
-//                }
-//                is ViewState.Error -> {
-//                    Toast.makeText(context, "${it.throwable.message}", Toast.LENGTH_LONG).show()
-//                }
-//                else -> {}
-//            }
-//        }
-//    }
-//
-//    private fun initObserver() {
-//        viewModel.coffeeResponse.observe(this) {
-//            loadImage(it)
-//        }
-//
-//        viewModel.message.observe(this) {
-//            loadMessage(it)
-//        }
-//
-//        viewModel.loading.observe(this) {
-//            binding.pbLoading.isVisible = it == true
-//        }
-//    }
 
     private fun addNewMessage() {
         binding.bvAdicionar.setOnClickListener {
@@ -84,9 +44,15 @@ class CreateMessageActivity : AppCompatActivity() {
                     Toast.makeText(this, "Mensagem adicionada a lista", Toast.LENGTH_LONG).show()
                     clearEditText()
                 }
+                else{
+                    Toast.makeText(this, "Escreva uma mensagem primeiro", Toast.LENGTH_LONG).show()
+                }
             }
-            Toast.makeText(this, "Escreva uma mensagem primeiro", Toast.LENGTH_LONG).show()
         }
+    }
+
+    private fun favoriteMessage(message: String) {
+        viewModel.saveMessageFavorited(message)
     }
 
     private fun clearEditText() {
@@ -111,4 +77,33 @@ class CreateMessageActivity : AppCompatActivity() {
         }
         return super.onOptionsItemSelected(item)
     }
+
+/*    private fun intObserver() {
+        viewModel.characterResponse.observe(this.viewLifecycleOwner) {
+
+            when (it) {
+                is ViewState.Success -> {
+                    adapter.updateCharacterList(it.data.toMutableList())
+                }
+                is ViewState.Error -> {
+                    Toast.makeText(context, "${it.throwable.message}", Toast.LENGTH_LONG).show()
+                }
+                else -> {}
+            }
+        }
+    }
+
+    private fun initObserver() {
+        viewModel.coffeeResponse.observe(this) {
+            loadImage(it)
+        }
+
+        viewModel.message.observe(this) {
+            loadMessage(it)
+        }
+
+        viewModel.loading.observe(this) {
+            binding.pbLoading.isVisible = it == true
+        }
+    }*/
 }

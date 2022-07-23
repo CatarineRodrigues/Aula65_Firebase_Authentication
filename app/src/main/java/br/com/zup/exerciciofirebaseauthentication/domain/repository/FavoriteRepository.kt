@@ -9,7 +9,7 @@ import com.google.firebase.ktx.Firebase
 class FavoriteRepository {
     private val authentication: FirebaseAuth = Firebase.auth
     private val database = FirebaseDatabase.getInstance()
-    private val reference = database.getReference()
+    private val reference = database.getReference("Mensagens favoritas - ${authentication.currentUser?.uid}")
 
     fun getDatabaseReference() = reference
 

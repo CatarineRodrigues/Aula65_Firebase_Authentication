@@ -18,7 +18,9 @@ class FavoriteActivity : AppCompatActivity() {
     }
 
     private val adapter: FavoriteAdapter by lazy {
-        FavoriteAdapter(arrayListOf(), ::removeFavoriteMessage)
+        FavoriteAdapter(arrayListOf()
+//            , ::removeFavoriteMessage
+        )
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
