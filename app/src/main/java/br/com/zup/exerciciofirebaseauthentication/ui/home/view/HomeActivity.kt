@@ -1,16 +1,15 @@
 package br.com.zup.exerciciofirebaseauthentication.ui.home.view
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import br.com.zup.exerciciofirebaseauthentication.R
 import br.com.zup.exerciciofirebaseauthentication.databinding.ActivityHomeBinding
 import br.com.zup.exerciciofirebaseauthentication.ui.createmessage.view.CreateMessageActivity
-import br.com.zup.exerciciofirebaseauthentication.ui.createmessage.view.CreateMessageAdapter
 import br.com.zup.exerciciofirebaseauthentication.ui.home.viewmodel.HomeViewModel
 import br.com.zup.exerciciofirebaseauthentication.ui.login.view.LoginActivity
 
@@ -52,14 +51,13 @@ class HomeActivity : AppCompatActivity() {
         val email = viewModel.getEmailUser()
         binding.tvNameUser.text = name
         binding.tvEmailUser.text = email
-//        binding.tvNameUser.text = "$name - $email"
     }
 
-    private fun goToLogin(){
+    private fun goToLogin() {
         startActivity(Intent(this, LoginActivity::class.java))
     }
 
-    private fun goToMessage(){
+    private fun goToMessage() {
         binding.btnMessage.setOnClickListener {
             startActivity(Intent(this, CreateMessageActivity::class.java))
         }

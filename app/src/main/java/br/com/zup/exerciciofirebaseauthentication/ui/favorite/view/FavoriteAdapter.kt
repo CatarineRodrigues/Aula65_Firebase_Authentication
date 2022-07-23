@@ -4,11 +4,10 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import br.com.zup.exerciciofirebaseauthentication.databinding.MessageItemBinding
-import com.squareup.picasso.Picasso
 
-class FavoriteAdapter (
+class FavoriteAdapter(
     private var favoriteList: MutableList<String>,
-    private val onDisfavorCLick: (message: String) -> Unit
+    private val onDisfavorCLick: (message: String) -> Unit,
 ) :
     RecyclerView.Adapter<FavoriteAdapter.ViewHolder>() {
 

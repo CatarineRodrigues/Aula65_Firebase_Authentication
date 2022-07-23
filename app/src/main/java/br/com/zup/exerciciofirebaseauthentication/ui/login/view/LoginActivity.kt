@@ -1,10 +1,9 @@
 package br.com.zup.exerciciofirebaseauthentication.ui.login.view
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
-import br.com.zup.exerciciofirebaseauthentication.R
 import br.com.zup.exerciciofirebaseauthentication.databinding.ActivityLoginBinding
 import br.com.zup.exerciciofirebaseauthentication.domain.model.User
 import br.com.zup.exerciciofirebaseauthentication.ui.home.view.HomeActivity
@@ -45,20 +44,20 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
-    private fun goToRegistration(){
+    private fun goToRegistration() {
         val intent = Intent(this, RegisterActivity::class.java)
         startActivity(intent)
     }
 
-    private fun setClickButtonNewRegister(){
+    private fun setClickButtonNewRegister() {
         binding.tvNewRegister.setOnClickListener {
             goToRegistration()
         }
     }
 
-    private fun setClickButtonLogin(){
+    private fun setClickButtonLogin() {
         binding.btnLogin?.setOnClickListener {
-            val user =  getDataUser()
+            val user = getDataUser()
             viewModel.validateDataUser(user)
         }
     }

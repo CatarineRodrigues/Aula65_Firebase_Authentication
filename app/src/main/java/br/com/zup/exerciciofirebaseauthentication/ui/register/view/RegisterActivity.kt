@@ -1,9 +1,9 @@
 package br.com.zup.exerciciofirebaseauthentication.ui.register.view
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import br.com.zup.exerciciofirebaseauthentication.databinding.ActivityRegisterBinding
 import br.com.zup.exerciciofirebaseauthentication.domain.model.User
@@ -44,7 +44,7 @@ class RegisterActivity : AppCompatActivity() {
         }
     }
 
-    private fun setClickButtonFinishRegistration(){
+    private fun setClickButtonFinishRegistration() {
         binding.btnRegistration.setOnClickListener {
             val user = getDataUser()
             viewModel.validateDataUser(user)

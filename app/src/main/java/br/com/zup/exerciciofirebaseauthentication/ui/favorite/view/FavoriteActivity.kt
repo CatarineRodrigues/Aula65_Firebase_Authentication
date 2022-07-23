@@ -6,7 +6,6 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import br.com.zup.exerciciofirebaseauthentication.R
 import br.com.zup.exerciciofirebaseauthentication.databinding.ActivityFavoriteBinding
 import br.com.zup.exerciciofirebaseauthentication.ui.favorite.viewmodel.FavoriteViewModel
 
