@@ -74,9 +74,6 @@ class CreateMessageActivity : AppCompatActivity() {
 //        }
 //    }
 
-
-    private lateinit var mensagem: String
-
     private fun addNewMessage() {
         binding.bvAdicionar.setOnClickListener {
             val text = binding.etMessageText.text

@@ -1,19 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/cv_message"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="@dimen/size_8"
     android:backgroundTint="@color/teal_700">
 
-    <TextView
-        android:id="@+id/tv_messageBody"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="@dimen/size_8"
-        android:text="@string/mensage"
-        android:textColor="@color/white"
-        android:textSize="@dimen/font_size_14"
-        android:textStyle="bold" />
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/ic_favorite"
+            android:layout_width="@dimen/size_40"
+            android:layout_height="@dimen/size_40"
+            android:layout_marginLeft="@dimen/size_8"
+            android:contentDescription="@string/description"
+            android:src="@drawable/ic_disfavorite_star"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_messageBody" />
+
+        <TextView
+            android:id="@+id/tv_messageBody"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/size_8"
+            android:layout_marginLeft="@dimen/size_8"
+            android:text="@string/add_message"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_size_14"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/ic_favorite"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.cardview.widget.CardView>
