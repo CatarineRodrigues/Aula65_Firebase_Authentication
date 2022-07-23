@@ -32,6 +32,7 @@ class CreateMessageActivity : AppCompatActivity() {
         addNewMessage()
         setRecyclerView()
         goToFavoriteList()
+        intObserver()
     }
 
     private fun addNewMessage() {
@@ -43,8 +44,7 @@ class CreateMessageActivity : AppCompatActivity() {
                     adapter.updateMessageList(messageList)
                     Toast.makeText(this, "Mensagem adicionada a lista", Toast.LENGTH_LONG).show()
                     clearEditText()
-                }
-                else{
+                } else {
                     Toast.makeText(this, "Escreva uma mensagem primeiro", Toast.LENGTH_LONG).show()
                 }
             }
@@ -78,32 +78,13 @@ class CreateMessageActivity : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
-/*    private fun intObserver() {
-        viewModel.characterResponse.observe(this.viewLifecycleOwner) {
+    private fun intObserver() {
+        viewModel.messageState.observe(this) {
+            Toast.makeText(this, "Mensagem Favoritada!", Toast.LENGTH_LONG).show()
+        }
 
-            when (it) {
-                is ViewState.Success -> {
-                    adapter.updateCharacterList(it.data.toMutableList())
-                }
-                is ViewState.Error -> {
-                    Toast.makeText(context, "${it.throwable.message}", Toast.LENGTH_LONG).show()
-                }
-                else -> {}
-            }
+        viewModel.errorState.observe(this) {
+            Toast.makeText(this, "Não foi possível favoritar a mensagem", Toast.LENGTH_LONG).show()
         }
     }
-
-    private fun initObserver() {
-        viewModel.coffeeResponse.observe(this) {
-            loadImage(it)
-        }
-
-        viewModel.message.observe(this) {
-            loadMessage(it)
-        }
-
-        viewModel.loading.observe(this) {
-            binding.pbLoading.isVisible = it == true
-        }
-    }*/
 }

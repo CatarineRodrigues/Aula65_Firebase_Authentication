@@ -8,7 +8,7 @@ import com.squareup.picasso.Picasso
 
 class FavoriteAdapter (
     private var favoriteList: MutableList<String>,
-//    private val onCLick: (message: String) -> Unit
+    private val onDisfavorCLick: (message: String) -> Unit
 ) :
     RecyclerView.Adapter<FavoriteAdapter.ViewHolder>() {
 
@@ -20,9 +20,9 @@ class FavoriteAdapter (
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val message = favoriteList[position]
         holder.showMessage(message)
-//        holder.binding.ivRemoveFavorite.setOnClickListener {
-//            onCLick(message)
-//        }
+        holder.binding.icFavorite.setOnClickListener {
+            onDisfavorCLick(message)
+        }
     }
 
     override fun getItemCount() = favoriteList.size

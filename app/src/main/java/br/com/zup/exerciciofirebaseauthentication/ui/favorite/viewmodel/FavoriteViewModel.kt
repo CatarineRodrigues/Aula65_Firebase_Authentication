@@ -1,6 +1,5 @@
 package br.com.zup.exerciciofirebaseauthentication.ui.favorite.viewmodel
 
-import android.net.Uri
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -39,8 +38,6 @@ class FavoriteViewModel : ViewModel() {
     }
 
     fun removeMessageFavorite(message: String) {
-        val uri: Uri = Uri.parse(message)
-        val pathImage: String? = uri.lastPathSegment?.replace(".jpg", "")
-        favoriteRepository.getDatabaseReference().child("$pathImage").removeValue()
+        favoriteRepository.getDatabaseReference().removeValue()
     }
 }
