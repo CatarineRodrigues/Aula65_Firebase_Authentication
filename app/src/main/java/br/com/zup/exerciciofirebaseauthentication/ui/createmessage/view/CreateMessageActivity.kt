@@ -3,6 +3,7 @@ package br.com.zup.exerciciofirebaseauthentication.ui.createmessage.view
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Message
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
@@ -22,6 +23,7 @@ import br.com.zup.exerciciofirebaseauthentication.ui.login.view.LoginActivity
 
 class CreateMessageActivity : AppCompatActivity() {
     private lateinit var binding: ActivityCreateMessageBinding
+    private var messageList = mutableListOf<String>()
 
     private val adapter: CreateMessageAdapter by lazy {
         CreateMessageAdapter(arrayListOf())
@@ -36,8 +38,11 @@ class CreateMessageActivity : AppCompatActivity() {
         binding = ActivityCreateMessageBinding.inflate(layoutInflater)
         setContentView(binding.root)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        addNewMessage()
         setRecyclerView()
         goToFavoriteList()
+
+
     }
 
 //    private fun intObserver() {
@@ -54,6 +59,42 @@ class CreateMessageActivity : AppCompatActivity() {
 //            }
 //        }
 //    }
+//
+//    private fun initObserver() {
+//        viewModel.coffeeResponse.observe(this) {
+//            loadImage(it)
+//        }
+//
+//        viewModel.message.observe(this) {
+//            loadMessage(it)
+//        }
+//
+//        viewModel.loading.observe(this) {
+//            binding.pbLoading.isVisible = it == true
+//        }
+//    }
+
+
+    private lateinit var mensagem: String
+
+    private fun addNewMessage() {
+        binding.bvAdicionar.setOnClickListener {
+            val text = binding.etMessageText.text
+            text?.let {
+                if (text.isNotBlank()) {
+                    messageList.add(text.toString())
+                    adapter.updateMessageList(messageList)
+                    Toast.makeText(this, "Mensagem adicionada a lista", Toast.LENGTH_LONG).show()
+                    clearEditText()
+                }
+            }
+            Toast.makeText(this, "Escreva uma mensagem primeiro", Toast.LENGTH_LONG).show()
+        }
+    }
+
+    private fun clearEditText() {
+        binding.etMessageText.text.clear()
+    }
 
     private fun setRecyclerView() {
         binding.rvMessagelist.adapter = adapter

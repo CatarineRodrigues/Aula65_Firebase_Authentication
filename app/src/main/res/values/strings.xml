@@ -16,4 +16,5 @@
     <string name="add_message">Adicionar Mensagem</string>
     <string name="new_message">Digite a nova mensagem</string>
     <string name="insert_your_message">Insira aqui as suas mensagens pessoais</string>
+    <string name="favorite_message">Suas mensagens favoritas</string>
 </resources>

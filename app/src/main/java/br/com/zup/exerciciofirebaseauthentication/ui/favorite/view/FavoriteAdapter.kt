@@ -8,7 +8,7 @@ import com.squareup.picasso.Picasso
 
 class FavoriteAdapter (
     private var favoriteList: MutableList<String>,
-//    private val onCLick: (message: String) -> Unit
+    private val onCLick: (message: String) -> Unit
 ) :
     RecyclerView.Adapter<FavoriteAdapter.ViewHolder>() {
 
