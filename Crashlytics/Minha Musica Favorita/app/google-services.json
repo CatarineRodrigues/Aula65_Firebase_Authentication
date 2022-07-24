@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "224835216621",
+    "project_id": "app-musica-200cf",
+    "storage_bucket": "app-musica-200cf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:224835216621:android:121b35f48fd0c3e0ecd8e4",
+        "android_client_info": {
+          "package_name": "br.com.zup.minhamusicafavorita"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "224835216621-v806c2piaosfetuerfndhbo6p5nc1cla.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBkEpeZNbpC6dqGfsLR7tdIsu7N1est1NU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "224835216621-v806c2piaosfetuerfndhbo6p5nc1cla.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

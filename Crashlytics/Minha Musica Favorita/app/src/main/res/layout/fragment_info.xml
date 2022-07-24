@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.viewpager.info.view.InfoFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imgTaylorInformacoes"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/tamanho_250"
+            android:scaleType="centerCrop"
+            android:src="@drawable/detalhe_foto"
+            app:layout_constraintBottom_toTopOf="@id/tvNomeInformacoes"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvNomeInformacoes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margem_12"
+            android:text="@string/nome_taylor_swift"
+            android:textSize="@dimen/fonte_16"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imgTaylorInformacoes" />
+
+        <TextView
+            android:id="@+id/tvTextoInformacoes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/margem_12"
+            android:text="@string/texto_informacoes_TS"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvNomeInformacoes" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

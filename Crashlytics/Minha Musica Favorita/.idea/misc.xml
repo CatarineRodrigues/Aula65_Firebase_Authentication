@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/catarine.rodrigues/Desktop/Catalisa/Android/Aula36_AndroidCore/ListaExercicios/Minha Musica Favorita/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Users/catarine.rodrigues/Desktop/Catalisa/Android/Aula43_ViewPager&amp;TabLayout/ListaExercicios/Minha Musica Favorita/app/src/main/res/layout/activity_detalhes.xml" value="0.1796875" />
+        <entry key="..\:/Users/catarine.rodrigues/Desktop/Catalisa/Android/Aula43_ViewPager&amp;TabLayout/ListaExercicios/Minha Musica Favorita/app/src/main/res/layout/activity_main.xml" value="0.1796875" />
+        <entry key="..\:/Users/catarine.rodrigues/Desktop/Catalisa/Android/Aula43_ViewPager&amp;TabLayout/ListaExercicios/Minha Musica Favorita/app/src/main/res/layout/fragment_fotos.xml" value="0.1796875" />
+        <entry key="..\:/Users/catarine.rodrigues/Desktop/Catalisa/Android/Aula43_ViewPager&amp;TabLayout/ListaExercicios/Minha Musica Favorita/app/src/main/res/layout/fragment_informacoes.xml" value="0.165625" />
+        <entry key="..\:/Users/catarine.rodrigues/Desktop/Catalisa/Android/Aula44_Revisao/Aula43_ViewPager_TabLayout/Minha Musica Favorita/app/src/main/res/layout/activity_albuns.xml" value="0.1796875" />
+        <entry key="..\:/Users/catarine.rodrigues/Desktop/Catalisa/Android/Aula44_Revisao/Aula43_ViewPager_TabLayout/Minha Musica Favorita/app/src/main/res/layout/activity_detalhes.xml" value="0.1796875" />
+        <entry key="..\:/Users/catarine.rodrigues/Desktop/Catalisa/Android/Aula44_Revisao/Aula43_ViewPager_TabLayout/Minha Musica Favorita/app/src/main/res/layout/activity_main.xml" value="0.1796875" />
+        <entry key="..\:/Users/catarine.rodrigues/Desktop/Catalisa/Android/Aula44_Revisao/Aula43_ViewPager_TabLayout/Minha Musica Favorita/app/src/main/res/layout/album_item.xml" value="0.1796875" />
+        <entry key="..\:/Users/catarine.rodrigues/Desktop/Catalisa/Android/Aula44_Revisao/Aula43_ViewPager_TabLayout/Minha Musica Favorita/app/src/main/res/layout/albums_item.xml" value="0.17864583333333334" />
+        <entry key="..\:/Users/catarine.rodrigues/Desktop/Catalisa/Android/Aula44_Revisao/Aula43_ViewPager_TabLayout/Minha Musica Favorita/app/src/main/res/layout/fragment_album_selecionado.xml" value="0.22" />
+        <entry key="..\:/Users/catarine.rodrigues/Desktop/Catalisa/Android/Aula44_Revisao/Aula43_ViewPager_TabLayout/Minha Musica Favorita/app/src/main/res/layout/fragment_fotos.xml" value="0.1796875" />
+        <entry key="..\:/Users/catarine.rodrigues/Desktop/Catalisa/Android/Aula44_Revisao/Aula43_ViewPager_TabLayout/Minha Musica Favorita/app/src/main/res/layout/fragment_informacoes.xml" value="0.1796875" />
+        <entry key="..\:/Users/catarine.rodrigues/Desktop/Catalisa/Aplicativo/Apps Teste/AppMusica/Minha Musica Favorita/app/src/main/res/layout/activity_album.xml" value="0.1796875" />
+        <entry key="..\:/Users/catarine.rodrigues/Desktop/Catalisa/Aplicativo/Apps Teste/AppMusica/Minha Musica Favorita/app/src/main/res/layout/activity_detalhes.xml" value="0.1796875" />
+        <entry key="..\:/Users/catarine.rodrigues/Desktop/Catalisa/Aplicativo/Apps Teste/AppMusica/Minha Musica Favorita/app/src/main/res/layout/activity_home.xml" value="0.1796875" />
+        <entry key="..\:/Users/catarine.rodrigues/Desktop/Catalisa/Aplicativo/Apps Teste/AppMusica/Minha Musica Favorita/app/src/main/res/layout/fragment_album.xml" value="0.1796875" />
+        <entry key="..\:/Users/catarine.rodrigues/Desktop/Catalisa/Aplicativo/Apps Teste/AppMusica/Minha Musica Favorita/app/src/main/res/layout/fragment_album_details.xml" value="0.1796875" />
+        <entry key="..\:/Users/catarine.rodrigues/Desktop/Catalisa/Aplicativo/Apps Teste/AppMusica/Minha Musica Favorita/app/src/main/res/layout/fragment_view_pager.xml" value="0.1796875" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

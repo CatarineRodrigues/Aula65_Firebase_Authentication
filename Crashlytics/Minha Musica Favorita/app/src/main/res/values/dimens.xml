@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="tamanho_250">250dp</dimen>
+    <dimen name="fonte_16">16sp</dimen>
+    <dimen name="fonte_12">12sp</dimen>
+    <dimen name="margem_12">12dp</dimen>
+</resources>
